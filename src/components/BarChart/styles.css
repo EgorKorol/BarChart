@@ -1,0 +1,115 @@
+.bar-chart {
+  background-color: #cbcbcb;
+  width: 100%;
+  height: 780px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.bar-chart__median {
+  position: relative;
+  height: 2px;
+  width: calc(100% - 80px);
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bar-chart__y {
+  height: calc(100% - 80px);
+  width: 2px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
+
+.bar-chart__y-num {
+  position: absolute;
+  font-size: 12px;
+  right: calc(100% + 10px);
+  display: inline-block;
+}
+
+.bar-chart__y-num::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 2px;
+  background-color: rgba(0, 0, 0);
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bar-chart__y-num--max {
+  top: 10px;
+}
+
+.bar-chart__y-num--half-max {
+  top: 180px;
+}
+
+.bar-chart__y-num--zero {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bar-chart__y-num--zero::before {
+  display: none;
+}
+
+.bar-chart__y-num--min {
+  bottom: 10px;
+}
+
+.bar-chart__y-num--half-min {
+  bottom: 180px;
+}
+
+.bar-chart__item {
+  background-color: rgba(255, 0, 0, 0.4);
+  position: absolute;
+  transition: height 0.4s ease-in;
+}
+
+.bar-chart__item:hover {
+  background-color: tomato;
+}
+
+.bar-chart__item:hover .bar-chart__tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bar-chart__tooltip {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  padding: 5px;
+  border-radius: 5px;
+  bottom: calc(100% + 10px);
+  background-color: #fff;
+  font-size: 11px;
+  width: calc(100% - 10px);
+  min-width: 40px;
+  max-width: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s ease;
+}
+
+.bar-chart__tooltip::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #fff;
+}

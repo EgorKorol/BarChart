@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+.button {
+  background-color: #d2d2d2;
+  padding: 10px;
+  margin: 10px;
+}
+
+.button--active {
+  background-color: #fff700;
+}
